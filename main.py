@@ -54,4 +54,10 @@ print("Dados brutos do banco:")
 for row in dados_brutos_do_banco:
     print(row)
 
+print("\nDados organizados\n"+("=" * 30))
+dados_dict = {row[1]: row[2] for row in dados_brutos_do_banco}
+
+for item_data, iten_valor in dados_dict.items():
+    print(f"Data: {item_data}, Valor: {iten_valor}")
+
 print("\nDeu bom! Confia")
