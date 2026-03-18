@@ -11,7 +11,7 @@ html_content = response.content
 Beauti = BeautifulSoup(html_content, 'html.parser')
 
 soup = Beauti.find_all(
-    name='table', 
+    name='table',
     attrs={'class': 'table table-bordered table-striped text-center'}
 )
 
@@ -21,7 +21,7 @@ texto = soup[0]
 ipca_data = []
 for row in texto.find_all('tr')[1:]:
     cols = row.find_all('td')
-    if cols: 
+    if cols:
         data = cols[0].text.strip()
         valor = cols[1].text.strip().replace(',', '.').replace(' ', '').replace('/n', '')
         if valor:
@@ -34,8 +34,7 @@ cursor.execute('''
     CREATE TABLE IF NOT EXISTS ipca (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           valor REAL,
-          data TEXT    
-    
+          data TEXT
     )''')
 
 for data in ipca_data:
