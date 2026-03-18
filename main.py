@@ -45,11 +45,13 @@ cursor.executemany(
 )
 
 conn.commit()
-dados_do_banco = cursor.execute('SELECT * FROM ipca').fetchall()
 
-for row in dados_do_banco:
-    print(row)
+dados_brutos_do_banco = cursor.execute('SELECT * FROM ipca').fetchall()
 
 conn.close()
 
-print("Deu bom! Confia")
+print("Dados brutos do banco:")
+for row in dados_brutos_do_banco:
+    print(row)
+
+print("\nDeu bom! Confia")
