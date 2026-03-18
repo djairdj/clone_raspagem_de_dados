@@ -37,6 +37,8 @@ cursor.execute('''
           data TEXT
     )''')
 
+cursor.execute('CREATE UNIQUE INDEX IF NOT EXISTS idx_ipca_data ON ipca(data, valor)')
+
 cursor.executemany(
     'INSERT OR IGNORE INTO ipca (data, valor) VALUES (?, ?)',
     [(data, valor) for valor, data in ipca_data]
