@@ -37,9 +37,10 @@ cursor.execute('''
           data TEXT
     )''')
 
-for data in ipca_data:
-    valor, data = data
-    cursor.execute('INSERT INTO ipca (data, valor) VALUES (?, ?)', (data, valor))
+cursor.executemany(
+    'INSERT OR IGNORE INTO ipca (data, valor) VALUES (?, ?)',
+    [(data, valor) for valor, data in ipca_data]
+)
 
 conn.commit()
 dados_do_banco = cursor.execute('SELECT * FROM ipca').fetchall()
