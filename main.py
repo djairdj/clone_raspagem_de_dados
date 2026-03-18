@@ -60,4 +60,8 @@ dados_dict = {row[1]: row[2] for row in dados_brutos_do_banco}
 for item_data, iten_valor in dados_dict.items():
     print(f"Data: {item_data}, Valor: {iten_valor}")
 
+#Alternativamente, usando uma compreensão de lista para formatar a saída:
+# print("\nDados organizados\n" + ("@" * 30))
+# print("\n".join(f"Data: {item_data}, Valor: {item_valor}" for item_data, item_valor in dados_dict.items()))
+
 print("\nDeu bom! Confia")
