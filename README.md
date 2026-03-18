@@ -34,14 +34,18 @@ e realiza a coleta dos dados de uma tabela HTML e insere em um banco SQLlite.
 Clone o repositório:
 
 ```
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/mayacabral/Raspagem-de-dados.git raspagem_dados
 ```
 
 Acesse a pasta do projeto:
 
 ```
-cd seu-repositorio
+cd raspagem_dados
 ```
+Crie um ambiente virtual do Python e depois ative ele.
+
+Encerre o terminal e abra um novo
+
 Instale as dependências:
 
 ```
