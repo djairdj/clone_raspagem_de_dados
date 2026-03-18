@@ -42,6 +42,11 @@ for data in ipca_data:
     cursor.execute('INSERT INTO ipca (data, valor) VALUES (?, ?)', (data, valor))
 
 conn.commit()
+dados_do_banco = cursor.execute('SELECT * FROM ipca').fetchall()
+
+for row in dados_do_banco:
+    print(row)
+
 conn.close()
 
 print("Deu bom! Confia")
